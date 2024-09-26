@@ -1,10 +1,15 @@
-let express = require("express");
-let app = express();
+const express = require("express");
+const app = express();
+const port = 8000;
 
-app.listen(8000, function(){
+app.listen(port, () => {
     console.log("App is running...");
 });
 
-app.get("/", function(req, res){
+app.get("/", (req, res) => {
     res.sendFile(__dirname + '/application.html');
+});
+
+app.get("/edit", (req, res) => {
+    res.sendFile(__dirname + '/edit.html');
 });
